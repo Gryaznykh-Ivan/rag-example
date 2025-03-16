@@ -1,0 +1,23 @@
+{
+  "name": "nir",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "prisma": "^6.2.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.42",
+    "@langchain/textsplitters": "^0.1.0",
+    "@prisma/client": "^6.2.1",
+    "node-fetch": "^3.3.2"
+  }
+}

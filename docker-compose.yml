@@ -1,0 +1,30 @@
+name: griaznykh-nir
+services:
+    db:
+        hostname: db
+        image: pgvector/pgvector:pg17
+        ports:
+            - 5555:5432
+        restart: always
+        environment:
+            - POSTGRES_DB=vectordb
+            - POSTGRES_USER=testuser
+            - POSTGRES_PASSWORD=testpwd
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+    embedding:
+        build:
+            context: ./embedding_model
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./embedding_model:/app
+    qwen:
+        build:
+            context: ./qwen
+            dockerfile: Dockerfile
+        ports:
+            - "8001:8000"
+        volumes:
+            - ./qwen:/app
